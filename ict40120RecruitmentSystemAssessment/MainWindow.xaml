@@ -1,0 +1,38 @@
+﻿<Window x:Class="ict40120RecruitmentSystemAssessment.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ict40120RecruitmentSystemAssessment"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <!--grid definition-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="4*" />
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <!--buttons-->
+        <Button x:Name="TestButton" Content="Button" Margin="8" Grid.Column="0" Grid.Row="0"/>
+        
+        <!--lists-->
+        <ListBox x:Name="ContractorsList" Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" Margin="3,8,3,8"/>
+        <ListBox x:Name="JobsList" Grid.Row="1" Grid.Column="2" Grid.RowSpan="4" Margin="3,8,3,8"/>
+        <ListBox x:Name="JobsInProgressList" Grid.Row="1" Grid.Column="3" Grid.RowSpan="4" Margin="3,8,3,8"/>
+        <ListBox x:Name="JobsDoneList" Grid.Row="1" Grid.Column="4" Grid.RowSpan="4" Margin="3,8,3,8"/>
+
+
+    </Grid>
+</Window>
