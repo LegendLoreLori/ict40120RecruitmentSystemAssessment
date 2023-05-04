@@ -11,7 +11,7 @@ namespace ict40120RecruitmentSystemAssessment
         public string Id { get; private set; }
         public string Name { get; private set; }
         public DateOnly CompletionDate { get; private set; }
-        public bool IsAssigned { get; set; }
+        public Contractor? ContractorAssigned { get; set; }
         public bool IsComplete { get; set; }
 
         public Job(string id, string name, DateOnly completionDate) 
@@ -19,7 +19,6 @@ namespace ict40120RecruitmentSystemAssessment
             Id = id;
             Name = name;
             CompletionDate = completionDate;
-            IsAssigned = false;
             IsComplete = false;
         }
     }

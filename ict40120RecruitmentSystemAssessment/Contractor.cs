@@ -11,7 +11,6 @@ namespace ict40120RecruitmentSystemAssessment
         public string Id { get; private set; }
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
-
         public bool IsAssigned { get; set; }
         public int HourlyWage { get; private set; }
 
