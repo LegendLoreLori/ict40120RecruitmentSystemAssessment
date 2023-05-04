@@ -9,29 +9,34 @@
     <Grid>
         <!--grid definition-->
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="16" />
             <ColumnDefinition Width="4*" />
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="4*" />
             <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="4*" />
+            <!--<ColumnDefinition Width="4*" />-->
+            <ColumnDefinition Width="16" />
+
 
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="16" />
             <RowDefinition Height="1*" />
             <RowDefinition Height="1*" />
             <RowDefinition Height="1*" />
             <RowDefinition Height="1*" />
             <RowDefinition Height="1*" />
+            <RowDefinition Height="16" />
         </Grid.RowDefinitions>
 
         <!--buttons-->
-        <Button x:Name="TestButton" Content="Button" Margin="8" Grid.Column="0" Grid.Row="0"/>
+        <Button x:Name="TestButton" Content="Button" Margin="8" Grid.Column="1" Grid.Row="1"/>
         
         <!--lists-->
-        <ListBox x:Name="ContractorsList" Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" Margin="3,8,3,8"/>
-        <ListBox x:Name="JobsList" Grid.Row="1" Grid.Column="2" Grid.RowSpan="4" Margin="3,8,3,8"/>
-        <ListBox x:Name="JobsInProgressList" Grid.Row="1" Grid.Column="3" Grid.RowSpan="4" Margin="3,8,3,8"/>
-        <ListBox x:Name="JobsDoneList" Grid.Row="1" Grid.Column="4" Grid.RowSpan="4" Margin="3,8,3,8"/>
+        <ListBox x:Name="ContractorsList" Grid.Row="2" Grid.Column="1" Grid.RowSpan="4" Margin="3,8,3,8"/>
+        <ListBox x:Name="JobsList" Grid.Row="2" Grid.Column="3" Grid.RowSpan="4" Margin="3,8,3,8"/>
+        <ListBox x:Name="JobsInProgressList" Grid.Row="2" Grid.Column="4" Grid.RowSpan="4" Margin="3,8,3,8"/>
+        <!--<ListBox x:Name="JobsDoneList" Grid.Row="2" Grid.Column="5" Grid.RowSpan="4" Margin="3,8,3,8"/>-->
 
 
     </Grid>
