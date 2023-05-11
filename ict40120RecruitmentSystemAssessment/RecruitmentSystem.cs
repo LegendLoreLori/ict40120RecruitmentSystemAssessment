@@ -28,9 +28,11 @@ namespace ict40120RecruitmentSystemAssessment
             };
         }
 
-        public void AddContractor(Contractor contracter)
+        public void AddContractor(string id, string firstName, string lastName, string hourlyWageInput)
         {
-            Contractors.Add(contracter);
+            int hourlyWage = int.Parse(hourlyWageInput);
+            Contractor contractor = new(id, firstName, lastName, hourlyWage);
+            Contractors.Add(contractor);
         }
 
         public void RemoveContractor(Contractor contractor)
@@ -54,14 +56,9 @@ namespace ict40120RecruitmentSystemAssessment
             job.IsComplete = true;
         }
 
-        public List<string> GetContractors()
+        public List<Contractor> GetContractors()
         {
-            List<string> contractorsList = new();
-            foreach (Contractor contractor  in Contractors)
-            {
-                contractorsList.Add($@"{contractor.Id}: {contractor.FirstName} {contractor.LastName} ${contractor.HourlyWage}/hr");
-            }
-            return contractorsList;
+            return Contractors;
         }
         public List<Contractor> GetAvailableContractors(List<Contractor> contractors)
         {

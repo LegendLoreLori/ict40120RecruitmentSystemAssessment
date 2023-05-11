@@ -20,17 +20,29 @@ namespace ict40120RecruitmentSystemAssessment
     /// </summary>
     public partial class MainWindow : Window
     {
+        readonly RecruitmentSystem recruitmentSystem = new();
+
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        readonly RecruitmentSystem recruitmentSystem = new();
+        void RefreshList() 
+        {
+            ContractorsList.ItemsSource = recruitmentSystem.GetContractors()
+                .Select(Contractor => $"{Contractor.Id}: {Contractor.FirstName} {Contractor.LastName}  Wage: ${Contractor.HourlyWage}/hr")
+                .ToString();
+        }
 
         private void test_Click(object sender, RoutedEventArgs e)
         {
-                ContractorsList.ItemsSource = recruitmentSystem.GetContractors();
+            RefreshList();
+        }
 
+        private void ContractorsButton_Click(object sender, RoutedEventArgs e)
+        {
+            recruitmentSystem.AddContractor(idText.Text, firstNameText.Text, LastNameText.Text, WageText.Text);
+            RefreshList();
         }
     }
 }
