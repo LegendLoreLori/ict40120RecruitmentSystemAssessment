@@ -11,14 +11,16 @@ namespace ict40120RecruitmentSystemAssessment
         public string Id { get; private set; }
         public string Name { get; private set; }
         public DateOnly CompletionDate { get; private set; }
+        public int Cost { get; private set; }
         public Contractor? ContractorAssigned { get; set; }
         public bool IsComplete { get; set; }
 
-        public Job(string id, string name, DateOnly completionDate) 
+        public Job(string id, string name, DateOnly completionDate, int cost) 
         {
             Id = id;
             Name = name;
             CompletionDate = completionDate;
+            Cost = cost;
             IsComplete = false;
         }
     }

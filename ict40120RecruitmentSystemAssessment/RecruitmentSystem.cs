@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace ict40120RecruitmentSystemAssessment
 {
-    class RecruitmentSystem
+    public class RecruitmentSystem
     {
-    }
+        List<Contractor> contractors = new List<Contractor>();
+        List<Job> jobs= new List<Job>();
+
+    }   
 }
