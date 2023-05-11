@@ -24,5 +24,15 @@ namespace ict40120RecruitmentSystemAssessment
         {
             InitializeComponent();
         }
+
+        readonly RecruitmentSystem recruitmentSystem = new();
+
+        private void test_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (string contractor in recruitmentSystem.GetContractors())
+            {
+                ContractorsList.Items.Add(contractor);
+            }
+        }
     }
 }

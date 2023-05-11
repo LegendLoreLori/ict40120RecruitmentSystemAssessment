@@ -32,9 +32,8 @@
         <!--buttons-->
         <Button x:Name="ContractorsButton" Content="Add Contractor" Margin="8" Grid.Column="1" Grid.Row="1"/>
         <Button x:Name="AvailableJobsButton" Content="Add Job" Margin="8" Grid.Column="3" Grid.Row="1"/>
-        <Button x:Name="AssignedJobsButotn" Content="Complete Job" Margin="8" Grid.Column="4" Grid.Row="1"/>
-
-
+        <Button x:Name="AssignedJobsButton" Content="Complete Job" Margin="8" Grid.Column="4" Grid.Row="1"/>
+        <Button x:Name="test" Content="test" Margin="8" Grid.Column="2" Grid.Row="2" Click="test_Click"/>
 
         <!--lists-->
         <ListBox x:Name="ContractorsList" Grid.Row="3" Grid.Column="1" Grid.RowSpan="3" Margin="4,8,4,8"/>
