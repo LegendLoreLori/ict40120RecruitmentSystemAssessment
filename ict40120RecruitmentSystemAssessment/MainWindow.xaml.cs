@@ -29,10 +29,8 @@ namespace ict40120RecruitmentSystemAssessment
 
         private void test_Click(object sender, RoutedEventArgs e)
         {
-            foreach (string contractor in recruitmentSystem.GetContractors())
-            {
-                ContractorsList.Items.Add(contractor);
-            }
+                ContractorsList.ItemsSource = recruitmentSystem.GetContractors();
+
         }
     }
 }

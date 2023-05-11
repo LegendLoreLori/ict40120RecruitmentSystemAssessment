@@ -8,7 +8,7 @@ namespace ict40120RecruitmentSystemAssessment
 {
     public class RecruitmentSystem
     {
-        public List<Contractor> Contractors = new()   
+        List<Contractor> Contractors = new()   
             {
                 new Contractor(1.ToString(), "Bob", "Ross", 47),
                 new Contractor(2.ToString(), "Barry", "Buybax", 63),

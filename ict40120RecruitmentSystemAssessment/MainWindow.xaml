@@ -40,7 +40,5 @@
         <ListBox x:Name="JobsList" Grid.Row="3" Grid.Column="3" Grid.RowSpan="3" Margin="4,8,4,8"/>
         <ListBox x:Name="JobsInProgressList" Grid.Row="3" Grid.Column="4" Grid.RowSpan="3" Margin="4,8,4,8"/>
         <!--<ListBox x:Name="JobsDoneList" Grid.Row="2" Grid.Column="5" Grid.RowSpan="4" Margin="3,8,3,8"/>-->
-
-
     </Grid>
 </Window>
