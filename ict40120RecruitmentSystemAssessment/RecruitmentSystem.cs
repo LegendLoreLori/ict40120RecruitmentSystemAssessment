@@ -8,7 +8,12 @@ namespace ict40120RecruitmentSystemAssessment
 {
     public class RecruitmentSystem
     {
-        List<Contractor> Contractors = new()   
+        List<Contractor> Contractors = new();   
+        List<Job> Jobs = new();
+
+        public RecruitmentSystem()
+        {
+            Contractors = new List<Contractor>()            
             {
                 new Contractor(1.ToString(), "Bob", "Ross", 47),
                 new Contractor(2.ToString(), "Barry", "Buybax", 63),
@@ -16,10 +21,6 @@ namespace ict40120RecruitmentSystemAssessment
                 new Contractor(4.ToString(), "Fred", "Durst", 43),
                 new Contractor(5.ToString(), "Mariah", "Carey", 58)
             };
-        List<Job> Jobs = new();
-
-        public RecruitmentSystem()
-        {
             Jobs = new List<Job>()
             {
                 new Job(1.ToString(),"Carpet renovation", new DateOnly(2023, 03, 12), 12000),

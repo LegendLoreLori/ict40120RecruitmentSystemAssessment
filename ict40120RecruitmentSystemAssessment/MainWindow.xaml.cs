@@ -31,6 +31,7 @@ namespace ict40120RecruitmentSystemAssessment
         //TODO: change to apply to things other than contractors
         void RefreshList() 
         {
+            ContractorsList.ItemsSource = null;
             ContractorsList.ItemsSource = recruitmentSystem.GetContractors();
                 //.Select(Contractor => $"{Contractor.Id}: {Contractor.FirstName} {Contractor.LastName}  Wage: ${Contractor.HourlyWage}/hr");
                 //.ToString();

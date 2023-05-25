@@ -23,9 +23,9 @@ namespace ict40120RecruitmentSystemAssessment
             HourlyWage = hourlyWage;
         }
         
-        public string ToString()
+        public override string ToString()
         {
-            return "";
+            return $"{Id}: {FirstName} {LastName}  Wage: ${HourlyWage}/hr";
         }
     }
 }
