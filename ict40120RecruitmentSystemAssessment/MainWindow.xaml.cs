@@ -27,22 +27,28 @@ namespace ict40120RecruitmentSystemAssessment
             InitializeComponent();
         }
 
-        void RefreshContractorList() 
+        void RefreshContractors() 
         {
             ContractorsList.ItemsSource = null;
             ContractorsList.ItemsSource = recruitmentSystem.GetContractors();
         }
 
-        void RefreshJobList()
+        void RefreshJobs()
         {
             JobsList.ItemsSource = null;
             JobsList.ItemsSource = recruitmentSystem.GetJobs();
         }
 
+        void RefreshInProgress()
+        {
+            JobsInProgressList.ItemsSource = null;
+            JobsInProgressList.ItemsSource = recruitmentSystem.GetAssignedJobs();
+        }
+
         //populate list on startup
         private void ContractorsList_Initialized(object sender, EventArgs e)
         {
-            RefreshContractorList();
+            RefreshContractors();
         }
 
         //Create a new contractor from input and automatically add it to the recruitmentSystem
@@ -50,27 +56,36 @@ namespace ict40120RecruitmentSystemAssessment
         {
             //TODO: handle exceptions and dont accept non-null inputs
             recruitmentSystem.AddContractor(idContractorText.Text, firstNameText.Text, LastNameText.Text, WageText.Text);
-            RefreshContractorList();
+            RefreshContractors();
         }
 
         //remove entry from contractor list
         private void RemoveContractorButton_Click(object sender, RoutedEventArgs e)
         {
             recruitmentSystem.RemoveContractor((Contractor)ContractorsList.SelectedItem);
-            RefreshContractorList();
+            RefreshContractors();
         }
 
         //populate list on startup
         private void JobsList_Initialized(object sender, EventArgs e)
         {
-            RefreshJobList();
+            RefreshJobs();
+        }
+
+        //populate list on startup
+        private void JobsInProgressList_Initialized(object sender, EventArgs e)
+        {
+            RefreshInProgress();
         }
 
         //create a new job from input and automatically add it to the recruitmentsystem
         private void AddJobButton_Click(object sender, RoutedEventArgs e)
         {
             recruitmentSystem.AddJob(idJobText.Text, NameJobText.Text, DateJobText.Text, CostJobText.Text);
-            RefreshJobList();
+            RefreshJobs();
+            RefreshInProgress();
         }
+
+
     }
 }

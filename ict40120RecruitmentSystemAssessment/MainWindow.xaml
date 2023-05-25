@@ -36,7 +36,7 @@
 
         <ListBox x:Name="ContractorsList" Grid.Row="4" Grid.ColumnSpan="2" Grid.Column="1" Grid.RowSpan="3" Margin="4,8,4,8" Initialized="ContractorsList_Initialized"/>
         <ListBox x:Name="JobsList" Grid.Row="4" Grid.Column="4" Grid.RowSpan="3" Margin="4,8,4,8" Initialized="JobsList_Initialized"/>
-        <ListBox x:Name="JobsInProgressList" Grid.Row="4" Grid.Column="5" Grid.RowSpan="3" Margin="4,8,4,8"/>
+        <ListBox x:Name="JobsInProgressList" Grid.Row="4" Grid.Column="5" Grid.RowSpan="3" Margin="4,8,4,8" Initialized="JobsInProgressList_Initialized"/>
 
         <TextBox x:Name="idContractorText" Margin="8" Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Top" />
         <TextBox x:Name="firstNameText" Margin="8" Grid.Row="3" Grid.Column="2" TextWrapping="Wrap" VerticalAlignment="Top" />
