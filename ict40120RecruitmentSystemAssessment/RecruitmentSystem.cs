@@ -77,6 +77,7 @@ namespace ict40120RecruitmentSystemAssessment
             return jobs;
         }
 
+        //construct a job object from input in ui and add it to jobs list
         public void AddJob(string id, string name, string dateInput, string costInput)
         {
             DateOnly date = DateOnly.Parse(dateInput);

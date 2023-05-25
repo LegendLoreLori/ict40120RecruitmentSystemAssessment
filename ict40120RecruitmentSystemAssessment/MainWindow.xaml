@@ -31,6 +31,7 @@
 
         <Button x:Name="AddContractorButton" Content="Add" Margin="8" Grid.Column="1" Grid.Row="2" Click="AddContractorButton_Click"/>
         <Button x:Name="RemoveContractorButton" Content="Remove" Margin="8" Grid.Column="2" Grid.Row="2" Click="RemoveContractorButton_Click"/>
+        <Button x:Name="AssignContractorJobButton" Content="Assign" Margin="8" Grid.Column="4" Grid.Row="1" Click="AssignContractorJobButton_Click" />
         <Button x:Name="AddJobButton" Content="Add Job" Margin="8" Grid.Column="4" Grid.Row="2" Click="AddJobButton_Click"/>
         <Button x:Name="CompleteJobButton" Content="Complete Job" Margin="8" Grid.Column="5" Grid.Row="2"/>
 

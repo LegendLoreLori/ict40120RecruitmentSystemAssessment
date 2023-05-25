@@ -26,7 +26,11 @@ namespace ict40120RecruitmentSystemAssessment
         //override ToString method to display contractor correctly in list
         public override string ToString()
         {
-            return $"{Id}: {FirstName} {LastName}  Wage: ${HourlyWage}/hr";
+            string assigned;
+            if (IsAssigned) assigned = "Yes";
+            else assigned = "No";
+
+            return $"{Id}: {FirstName} {LastName}  Wage: ${HourlyWage}/hr\nAssigned: {assigned}";
         }
     }
 }

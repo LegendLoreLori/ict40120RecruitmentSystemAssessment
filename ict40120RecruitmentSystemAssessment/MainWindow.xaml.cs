@@ -66,6 +66,15 @@ namespace ict40120RecruitmentSystemAssessment
             RefreshContractors();
         }
 
+        private void AssignContractorJobButton_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO: handle null exception
+            recruitmentSystem.AssignJob((Contractor)ContractorsList.SelectedItem, (Job)JobsList.SelectedItem);
+            RefreshContractors();
+            RefreshJobs();
+            RefreshInProgress();
+        }
+
         //populate list on startup
         private void JobsList_Initialized(object sender, EventArgs e)
         {
