@@ -28,8 +28,10 @@ namespace ict40120RecruitmentSystemAssessment
             };
         }
 
+        //passes information in from text boxes and creates a contractor from it
         public void AddContractor(string id, string firstName, string lastName, string hourlyWageInput)
         {
+            //TODO: handle null exceptions
             int hourlyWage = int.Parse(hourlyWageInput);
             Contractor contractor = new(id, firstName, lastName, hourlyWage);
             Contractors.Add(contractor);
@@ -37,16 +39,19 @@ namespace ict40120RecruitmentSystemAssessment
 
         public void RemoveContractor(Contractor contractor)
         {
+            //TODO: handle null exceptions
             Contractors.Remove(contractor);
         }
 
         public void AddJob(Job job)
         {
+            //TODO: implement same as add contractor
             Jobs.Add(job);
         }
 
         public void AssignJob(Contractor contractor, Job job)
         {
+            //TODO: handle null exceptions
             job.ContractorAssigned = contractor;
             contractor.IsAssigned = true;
         }

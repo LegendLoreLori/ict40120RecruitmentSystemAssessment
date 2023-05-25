@@ -22,5 +22,10 @@ namespace ict40120RecruitmentSystemAssessment
             IsAssigned = false;
             HourlyWage = hourlyWage;
         }
+        
+        public string ToString()
+        {
+            return "";
+        }
     }
 }
