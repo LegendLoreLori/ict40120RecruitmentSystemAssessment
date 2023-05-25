@@ -33,9 +33,6 @@ namespace ict40120RecruitmentSystemAssessment
         {
             ContractorsList.ItemsSource = null;
             ContractorsList.ItemsSource = recruitmentSystem.GetContractors();
-                //.Select(Contractor => $"{Contractor.Id}: {Contractor.FirstName} {Contractor.LastName}  Wage: ${Contractor.HourlyWage}/hr");
-                //.ToString();
-                
         }
 
         private void test_Click(object sender, RoutedEventArgs e)

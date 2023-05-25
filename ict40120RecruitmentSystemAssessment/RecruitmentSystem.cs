@@ -8,8 +8,8 @@ namespace ict40120RecruitmentSystemAssessment
 {
     public class RecruitmentSystem
     {
-        List<Contractor> Contractors = new();   
-        List<Job> Jobs = new();
+        List<Contractor> Contractors;
+        List<Job> Jobs;
 
         public RecruitmentSystem()
         {
