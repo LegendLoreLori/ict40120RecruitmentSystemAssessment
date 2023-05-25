@@ -31,16 +31,24 @@
 
         <Button x:Name="AddContractorButton" Content="Add" Margin="8" Grid.Column="1" Grid.Row="2" Click="AddContractorButton_Click"/>
         <Button x:Name="RemoveContractorButton" Content="Remove" Margin="8" Grid.Column="2" Grid.Row="2" Click="RemoveContractorButton_Click"/>
-        <Button x:Name="AvailableJobsButton" Content="Add Job" Margin="8" Grid.Column="4" Grid.Row="2"/>
-        <Button x:Name="AssignedJobsButton" Content="Complete Job" Margin="8" Grid.Column="5" Grid.Row="2"/>
+        <Button x:Name="AddJobButton" Content="Add Job" Margin="8" Grid.Column="4" Grid.Row="2" Click="AddJobButton_Click"/>
+        <Button x:Name="CompleteJobButton" Content="Complete Job" Margin="8" Grid.Column="5" Grid.Row="2"/>
 
         <ListBox x:Name="ContractorsList" Grid.Row="4" Grid.ColumnSpan="2" Grid.Column="1" Grid.RowSpan="3" Margin="4,8,4,8" Initialized="ContractorsList_Initialized"/>
         <ListBox x:Name="JobsList" Grid.Row="4" Grid.Column="4" Grid.RowSpan="3" Margin="4,8,4,8" Initialized="JobsList_Initialized"/>
         <ListBox x:Name="JobsInProgressList" Grid.Row="4" Grid.Column="5" Grid.RowSpan="3" Margin="4,8,4,8"/>
 
-        <TextBox x:Name="idText" Margin="8" Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Top" />
+        <TextBox x:Name="idContractorText" Margin="8" Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Top" />
         <TextBox x:Name="firstNameText" Margin="8" Grid.Row="3" Grid.Column="2" TextWrapping="Wrap" VerticalAlignment="Top" />
         <TextBox x:Name="LastNameText" Margin="8" Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Bottom" />
         <TextBox x:Name="WageText" Margin="8" Grid.Row="3" Grid.Column="2" TextWrapping="Wrap" VerticalAlignment="Bottom"  />
+
+        <TextBox x:Name="idJobText" Margin="8" Grid.Row="3" Grid.Column="4" TextWrapping="Wrap" VerticalAlignment="Top" />
+        <TextBox x:Name="NameJobText" Margin="8" Grid.Row="3" Grid.Column="4" TextWrapping="Wrap" VerticalAlignment="Bottom" />
+        <TextBox x:Name="DateJobText" Margin="8" Grid.Row="3" Grid.Column="5" TextWrapping="Wrap" VerticalAlignment="Top" />
+        <TextBox x:Name="CostJobText" Margin="8" Grid.Row="3" Grid.Column="5" TextWrapping="Wrap" VerticalAlignment="Bottom" />
+
+
+
     </Grid>
 </Window>

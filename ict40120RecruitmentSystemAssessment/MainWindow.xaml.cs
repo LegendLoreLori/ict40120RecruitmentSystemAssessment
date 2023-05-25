@@ -49,7 +49,7 @@ namespace ict40120RecruitmentSystemAssessment
         private void AddContractorButton_Click(object sender, RoutedEventArgs e)
         {
             //TODO: handle exceptions and dont accept non-null inputs
-            recruitmentSystem.AddContractor(idText.Text, firstNameText.Text, LastNameText.Text, WageText.Text);
+            recruitmentSystem.AddContractor(idContractorText.Text, firstNameText.Text, LastNameText.Text, WageText.Text);
             RefreshContractorList();
         }
 
@@ -63,6 +63,13 @@ namespace ict40120RecruitmentSystemAssessment
         //populate list on startup
         private void JobsList_Initialized(object sender, EventArgs e)
         {
+            RefreshJobList();
+        }
+
+        //create a new job from input and automatically add it to the recruitmentsystem
+        private void AddJobButton_Click(object sender, RoutedEventArgs e)
+        {
+            recruitmentSystem.AddJob(idJobText.Text, NameJobText.Text, DateJobText.Text, CostJobText.Text);
             RefreshJobList();
         }
     }

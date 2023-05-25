@@ -54,14 +54,33 @@ namespace ict40120RecruitmentSystemAssessment
             Contractors.Remove(contractor);
         }
 
+        //build a list of jobs without a contractor assigned
         public List<Job> GetJobs()
         {
-            return Jobs;
+            List<Job> jobs = new List<Job>();
+            foreach (Job job in Jobs)
+            {
+                if (job.ContractorAssigned == null) jobs.Add(job);
+            }
+            return jobs;
+        }
+        
+        //build a list of jobs in progress
+        public List<Job> GetAssignedJobs()
+        {
+            List<Job> jobs = new List<Job>();
+            foreach (Job job in Jobs)
+            {
+                if (job.ContractorAssigned is Contractor) jobs.Add(job);
+            }
+            return jobs;
         }
 
-        public void AddJob(Job job)
+        public void AddJob(string id, string name, string dateInput, string costInput)
         {
-            //TODO: implement same as add contractor
+            DateOnly date = DateOnly.Parse(dateInput);
+            int cost = int.Parse(costInput);
+            Job job = new(id, name, date, cost);
             Jobs.Add(job);
         }
 
@@ -70,11 +89,6 @@ namespace ict40120RecruitmentSystemAssessment
             //TODO: handle null exceptions
             job.ContractorAssigned = contractor;
             contractor.IsAssigned = true;
-        }
-
-        public List<Job> GetUnassignedJobs(List<Job> jobs)
-        {
-            return jobs;
         }
 
         public void CompleteJob(Job job)
