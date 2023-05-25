@@ -28,7 +28,7 @@ namespace ict40120RecruitmentSystemAssessment
         //override ToString method to display object correctly in list
         public override string ToString()
         {
-            return $"{Id}: {Name} {CompletionDate}  Total Cost: ${Cost}";
+            return $"{Id}: {Name} {CompletionDate}\n  Total Cost: ${Cost}";
         }
     }
 }

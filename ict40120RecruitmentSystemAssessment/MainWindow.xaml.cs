@@ -53,7 +53,7 @@ namespace ict40120RecruitmentSystemAssessment
             RefreshContractorList();
         }
 
-        //remove entry from contractor list and update UI
+        //remove entry from contractor list
         private void RemoveContractorButton_Click(object sender, RoutedEventArgs e)
         {
             recruitmentSystem.RemoveContractor((Contractor)ContractorsList.SelectedItem);

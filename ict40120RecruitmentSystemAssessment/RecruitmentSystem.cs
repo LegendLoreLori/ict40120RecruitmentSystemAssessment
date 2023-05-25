@@ -54,6 +54,11 @@ namespace ict40120RecruitmentSystemAssessment
             Contractors.Remove(contractor);
         }
 
+        public List<Job> GetJobs()
+        {
+            return Jobs;
+        }
+
         public void AddJob(Job job)
         {
             //TODO: implement same as add contractor
@@ -65,12 +70,6 @@ namespace ict40120RecruitmentSystemAssessment
             //TODO: handle null exceptions
             job.ContractorAssigned = contractor;
             contractor.IsAssigned = true;
-        }
-
-
-        public List<Job> GetJobs()
-        {
-            return Jobs;
         }
 
         public List<Job> GetUnassignedJobs(List<Job> jobs)
