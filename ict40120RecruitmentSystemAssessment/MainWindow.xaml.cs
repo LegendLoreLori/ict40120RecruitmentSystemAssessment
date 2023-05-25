@@ -69,6 +69,7 @@ namespace ict40120RecruitmentSystemAssessment
         private void AssignContractorJobButton_Click(object sender, RoutedEventArgs e)
         {
             //TODO: handle null exception
+            //TODO: select implement alternative way to select contractors/jobs
             recruitmentSystem.AssignJob((Contractor)ContractorsList.SelectedItem, (Job)JobsList.SelectedItem);
             RefreshContractors();
             RefreshJobs();

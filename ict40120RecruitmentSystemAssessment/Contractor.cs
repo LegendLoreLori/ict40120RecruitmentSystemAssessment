@@ -24,6 +24,7 @@ namespace ict40120RecruitmentSystemAssessment
         }
         
         //override ToString method to display contractor correctly in list
+        //TODO: handle assignment more gracefully
         public override string ToString()
         {
             string assigned;
