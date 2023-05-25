@@ -29,30 +29,32 @@ namespace ict40120RecruitmentSystemAssessment
 
         //TODO: change to be updated automatically
         //TODO: change to apply to things other than contractors
-        void RefreshList() 
+        void RefreshContractorList() 
         {
             ContractorsList.ItemsSource = null;
             ContractorsList.ItemsSource = recruitmentSystem.GetContractors();
         }
 
-        private void test_Click(object sender, RoutedEventArgs e)
-        {
-            RefreshList();
-        }
 
         //Create a new contractor from input and automatically add it to the recruitmentSystem
         private void AddContractorButton_Click(object sender, RoutedEventArgs e)
         {
             //TODO: handle exceptions and dont accept non-null inputs
             recruitmentSystem.AddContractor(idText.Text, firstNameText.Text, LastNameText.Text, WageText.Text);
-            RefreshList();
+            RefreshContractorList();
         }
 
         //fix
         private void RemoveContractorButton_Click(object sender, RoutedEventArgs e)
         {
             recruitmentSystem.RemoveContractor((Contractor)ContractorsList.SelectedItem);
-            RefreshList();
+            RefreshContractorList();
+        }
+
+        //populate list on startup
+        private void ContractorsList_Initialized(object sender, EventArgs e)
+        {
+            RefreshContractorList();
         }
     }
 }
