@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,6 +23,12 @@ namespace ict40120RecruitmentSystemAssessment
             CompletionDate = completionDate;
             Cost = cost;
             IsComplete = false;
+        }
+
+        //override ToString method to display object correctly in list
+        public override string ToString()
+        {
+            return $"{Id}: {Name} {CompletionDate}  Total Cost: ${Cost}";
         }
     }
 }

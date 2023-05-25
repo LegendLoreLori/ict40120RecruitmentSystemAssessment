@@ -23,6 +23,7 @@ namespace ict40120RecruitmentSystemAssessment
             HourlyWage = hourlyWage;
         }
         
+        //override ToString method to display contractor correctly in list
         public override string ToString()
         {
             return $"{Id}: {FirstName} {LastName}  Wage: ${HourlyWage}/hr";

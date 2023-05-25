@@ -27,14 +27,23 @@ namespace ict40120RecruitmentSystemAssessment
             InitializeComponent();
         }
 
-        //TODO: change to be updated automatically
-        //TODO: change to apply to things other than contractors
         void RefreshContractorList() 
         {
             ContractorsList.ItemsSource = null;
             ContractorsList.ItemsSource = recruitmentSystem.GetContractors();
         }
 
+        void RefreshJobList()
+        {
+            JobsList.ItemsSource = null;
+            JobsList.ItemsSource = recruitmentSystem.GetJobs();
+        }
+
+        //populate list on startup
+        private void ContractorsList_Initialized(object sender, EventArgs e)
+        {
+            RefreshContractorList();
+        }
 
         //Create a new contractor from input and automatically add it to the recruitmentSystem
         private void AddContractorButton_Click(object sender, RoutedEventArgs e)
@@ -44,7 +53,7 @@ namespace ict40120RecruitmentSystemAssessment
             RefreshContractorList();
         }
 
-        //fix
+        //remove entry from contractor list and update UI
         private void RemoveContractorButton_Click(object sender, RoutedEventArgs e)
         {
             recruitmentSystem.RemoveContractor((Contractor)ContractorsList.SelectedItem);
@@ -52,9 +61,9 @@ namespace ict40120RecruitmentSystemAssessment
         }
 
         //populate list on startup
-        private void ContractorsList_Initialized(object sender, EventArgs e)
+        private void JobsList_Initialized(object sender, EventArgs e)
         {
-            RefreshContractorList();
+            RefreshJobList();
         }
     }
 }

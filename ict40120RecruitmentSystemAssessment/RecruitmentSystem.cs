@@ -29,6 +29,16 @@ namespace ict40120RecruitmentSystemAssessment
             };
         }
 
+        public List<Contractor> GetContractors()
+        {
+            return Contractors;
+        }
+
+        public List<Contractor> GetAvailableContractors(List<Contractor> contractors)
+        {
+            return contractors;
+        }
+
         //passes information in from text boxes and creates a contractor from it
         public void AddContractor(string id, string firstName, string lastName, string hourlyWageInput)
         {
@@ -57,28 +67,20 @@ namespace ict40120RecruitmentSystemAssessment
             contractor.IsAssigned = true;
         }
 
-        public void CompleteJob(Job job)
-        {
-            job.IsComplete = true;
-        }
 
-        public List<Contractor> GetContractors()
+        public List<Job> GetJobs()
         {
-            return Contractors;
-        }
-        public List<Contractor> GetAvailableContractors(List<Contractor> contractors)
-        {
-            return contractors;
-        }
-
-        public List<Job> GetJobs(List<Job> jobs)
-        {
-            return jobs;
+            return Jobs;
         }
 
         public List<Job> GetUnassignedJobs(List<Job> jobs)
         {
             return jobs;
+        }
+
+        public void CompleteJob(Job job)
+        {
+            job.IsComplete = true;
         }
 
         public List<Job> GetJobsByCost(List<Job> jobs, int minCost, int maxCost)
