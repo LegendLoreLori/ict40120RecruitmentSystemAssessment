@@ -26,8 +26,10 @@ namespace ict40120RecruitmentSystemAssessment
                 new Job(1.ToString(),"Carpet renovation", new DateOnly(2023, 03, 12), 12000),
                 new Job(2.ToString(),"Fence repair", new DateOnly(2023, 12, 16), 5000),
                 new Job(3.ToString(),"Hardware installation", new DateOnly(2033, 05, 30), 4500),
-                new Job(4.ToString(),"Water Stoats", new DateOnly(2023, 08, 16), 9000, Contractors[4])
+                new Job(4.ToString(),"Water Stoats", new DateOnly(2023, 08, 16), 9000 /*Contractors[4]*/)
             };
+            // assigned dummy job on initialisation
+            AssignJob(Contractors[4], Jobs[3]);
         }
 
         public List<Contractor> GetContractors()

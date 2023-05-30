@@ -16,13 +16,13 @@ namespace ict40120RecruitmentSystemAssessment
         public Contractor? ContractorAssigned { get; set; }
         public bool IsComplete { get; set; }
 
-        public Job(string id, string name, DateOnly completionDate, int cost, Contractor? contractorAssigned=null) 
+        public Job(string id, string name, DateOnly completionDate, int cost/*, Contractor? contractorAssigned=null*/) 
         {
             Id = id;
             Name = name;
             CompletionDate = completionDate;
             Cost = cost;
-            ContractorAssigned = contractorAssigned;
+            //ContractorAssigned = contractorAssigned;
             IsComplete = false;
         }
 
