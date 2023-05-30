@@ -29,7 +29,7 @@ namespace ict40120RecruitmentSystemAssessment
                 new Job(4.ToString(),"Water Stoats", new DateOnly(2023, 08, 16), 9000 /*Contractors[4]*/)
             };
             // assigned dummy job on initialisation
-            AssignJob(Contractors[4], Jobs[3]);
+            AssignJob(Contractors[2], Jobs[3]);
         }
 
         public List<Contractor> GetContractors()
@@ -37,8 +37,13 @@ namespace ict40120RecruitmentSystemAssessment
             return Contractors;
         }
 
-        public List<Contractor> GetAvailableContractors(List<Contractor> contractors)
+        public List<Contractor> GetAvailableContractors()
         {
+            List<Contractor> contractors = new List<Contractor>();
+            foreach (Contractor contractor in Contractors)
+            {
+                if (contractor.IsAssigned != true) contractors.Add(contractor);
+            }
             return contractors;
         }
 

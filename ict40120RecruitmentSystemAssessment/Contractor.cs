@@ -28,10 +28,10 @@ namespace ict40120RecruitmentSystemAssessment
         public override string ToString()
         {
             string assigned;
-            if (IsAssigned) assigned = "Yes";
-            else assigned = "No";
+            if (IsAssigned) assigned = "Unavailable";
+            else assigned = "Available";
 
-            return $"{Id}: {FirstName} {LastName}  Wage: ${HourlyWage}/hr\nAssigned: {assigned}";
+            return $"{Id}: {FirstName} {LastName}  Wage: ${HourlyWage}/hr\n{assigned}";
         }
     }
 }

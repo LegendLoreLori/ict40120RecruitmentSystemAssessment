@@ -96,6 +96,17 @@ namespace ict40120RecruitmentSystemAssessment
             RefreshInProgress();
         }
 
+        //list contractors that arent assigned to a job
+        private void AvailableContractorsButton_Click(object sender, RoutedEventArgs e)
+        {
+            ContractorsList.ItemsSource = null;
+            ContractorsList.ItemsSource = recruitmentSystem.GetAvailableContractors();
+        }
 
+        //list all contractors
+        private void AllContractorsButton_Click(object sender, RoutedEventArgs e)
+        {
+            RefreshContractors();
+        }
     }
 }
