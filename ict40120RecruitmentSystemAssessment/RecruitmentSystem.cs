@@ -37,6 +37,7 @@ namespace ict40120RecruitmentSystemAssessment
             return Contractors;
         }
 
+        //returns list of contractors that can be assigned to a job
         public List<Contractor> GetAvailableContractors()
         {
             List<Contractor> contractors = new List<Contractor>();
@@ -96,13 +97,15 @@ namespace ict40120RecruitmentSystemAssessment
         public void AssignJob(Contractor contractor, Job job)
         {
             //TODO: handle null exceptions
+            //TODO: handle contractors that are already assigned
             job.ContractorAssigned = contractor;
             contractor.IsAssigned = true;
         }
 
-        public void CompleteJob(Job job)
+        public void CompleteJob(Job job, Contractor contractor)
         {
             job.IsComplete = true;
+            contractor.IsAssigned = false;
         }
 
         public List<Job> GetJobsByCost(List<Job> jobs, int minCost, int maxCost)

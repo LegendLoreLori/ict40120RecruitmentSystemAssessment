@@ -28,14 +28,14 @@
             <RowDefinition Height="1*" />
             <RowDefinition Height="16" />
         </Grid.RowDefinitions>
-
-        <Button x:Name="AllContractorsButton" Content="All" Margin="8" Grid.Column="1" Grid.Row="1" Click="AllContractorsButton_Click" />
-        <Button x:Name="AvailableContractorsButton" Content="Available" Margin="8" Grid.Column="2" Grid.Row="1" Click="AvailableContractorsButton_Click" />
-        <Button x:Name="AddContractorButton" Content="Add" Margin="8" Grid.Column="1" Grid.Row="2" Click="AddContractorButton_Click"/>
-        <Button x:Name="RemoveContractorButton" Content="Remove" Margin="8" Grid.Column="2" Grid.Row="2" Click="RemoveContractorButton_Click"/>
-        <Button x:Name="AssignContractorJobButton" Content="Assign" Margin="8" Grid.Column="4" Grid.Row="1" Click="AssignContractorJobButton_Click" />
-        <Button x:Name="AddJobButton" Content="Add Job" Margin="8" Grid.Column="4" Grid.Row="2" Click="AddJobButton_Click"/>
-        <Button x:Name="CompleteJobButton" Content="Complete Job" Margin="8" Grid.Column="5" Grid.Row="2"/>
+        <Button x:Name="AddContractorButton" Content="Add" Margin="8" Grid.Column="1" Grid.Row="1" Click="AddContractorButton_Click"/>
+        <Button x:Name="RemoveContractorButton" Content="Remove" Margin="8" Grid.Column="2" Grid.Row="1" Click="RemoveContractorButton_Click"/>
+        <Button x:Name="AllContractorsButton" Content="All" Margin="8" Grid.Column="1" Grid.Row="2" Click="AllContractorsButton_Click" />
+        <Button x:Name="AvailableContractorsButton" Content="Available" Margin="8" Grid.Column="2" Grid.Row="2" Click="AvailableContractorsButton_Click" />
+        
+        <Button x:Name="AddJobButton" Content="Add Job" Margin="8" Grid.Column="4" Grid.Row="1" Click="AddJobButton_Click"/>
+        <Button x:Name="CompleteJobButton" Content="Complete Job" Margin="8" Grid.Column="5" Grid.Row="1"/>
+        <Button x:Name="AssignContractorJobButton" Content="Assign" Margin="8" Grid.Column="4" Grid.Row="2" Click="AssignContractorJobButton_Click" />
 
         <ListBox x:Name="ContractorsList" Grid.Row="4" Grid.ColumnSpan="2" Grid.Column="1" Grid.RowSpan="3" Margin="4,8,4,8" Initialized="ContractorsList_Initialized"/>
         <ListBox x:Name="JobsList" Grid.Row="4" Grid.Column="4" Grid.RowSpan="3" Margin="4,8,4,8" Initialized="JobsList_Initialized"/>
