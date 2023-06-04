@@ -55,7 +55,7 @@ namespace ict40120RecruitmentSystemAssessment
         private void AddContractorButton_Click(object sender, RoutedEventArgs e)
         {
             //TODO: handle exceptions and dont accept non-null inputs
-            recruitmentSystem.AddContractor(idContractorText.Text, firstNameText.Text, LastNameText.Text, WageText.Text);
+            recruitmentSystem.AddContractor(IdContractorText.Text, FirstNameText.Text, LastNameText.Text, WageText.Text);
             RefreshContractors();
         }
 
@@ -91,7 +91,7 @@ namespace ict40120RecruitmentSystemAssessment
         //create a new job from input and automatically add it to the recruitmentsystem
         private void AddJobButton_Click(object sender, RoutedEventArgs e)
         {
-            recruitmentSystem.AddJob(idJobText.Text, NameJobText.Text, DateJobText.Text, CostJobText.Text);
+            recruitmentSystem.AddJob(IdJobText.Text, NameJobText.Text, DateJobText.Text, CostJobText.Text);
             RefreshJobs();
             RefreshInProgress();
         }
