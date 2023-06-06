@@ -37,10 +37,12 @@
         <Button x:Name="AddJobButton" Content="Add Job" Margin="8" Grid.Column="4" Grid.Row="1" Click="AddJobButton_Click"/>
         <Button x:Name="CompleteJobButton" Content="Complete Job" Margin="8" Grid.Column="5" Grid.Row="1"/>
         <Button x:Name="AssignContractorJobButton" Content="Assign" Margin="8" Grid.Column="4" Grid.Row="2" Click="AssignContractorJobButton_Click" />
+        <Button x:Name="FilterJobButton" Content="Filter" Margin="8" Grid.Column="5" Grid.Row="2" />
+        
         <Label x:Name="MinLabel" Content="Min" Grid.Column="5" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 0"/>
         <Label x:Name="MaxLabel" Content="Max" Grid.Column="5" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,70,0"/>
-        <TextBox x:Name="MinValueText" Grid.Column="5" Grid.Row="3" HorizontalAlignment="Left" Margin="8,0,4,0" VerticalAlignment="Center" Width="100" />
-        <TextBox x:Name="MaxValueText" Grid.Column="5" Grid.Row="3" Margin="4,0,8,0" HorizontalAlignment="Right" VerticalAlignment="Center" Width="100" />
+        <TextBox x:Name="MinValueText" Grid.Column="5" Grid.Row="3" HorizontalAlignment="Left" Margin="8,20,4,0" VerticalAlignment="Top" Width="100" />
+        <TextBox x:Name="MaxValueText" Grid.Column="5" Grid.Row="3" Margin="4,20,8,0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="100" />
 
         <!--Lists-->
         <ListBox x:Name="ContractorsList" Grid.Row="4" Grid.ColumnSpan="2" Grid.Column="1" Grid.RowSpan="3" Margin="4,8,4,8" Initialized="ContractorsList_Initialized"/>
