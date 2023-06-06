@@ -69,7 +69,7 @@ namespace ict40120RecruitmentSystemAssessment
             List<Job> jobs = new List<Job>();
             foreach (Job job in Jobs)
             {
-                if (job.ContractorAssigned == null) jobs.Add(job);
+                if (job.ContractorAssigned == null && job.IsComplete == false) jobs.Add(job);
             }
             return jobs;
         }
@@ -102,10 +102,13 @@ namespace ict40120RecruitmentSystemAssessment
             contractor.IsAssigned = true;
         }
 
-        public void CompleteJob(Job job, Contractor contractor)
+        public void CompleteJob(Job job/*, Contractor contractor*/)
         {
+            //TODO: handle null exceptions
+            job.ContractorAssigned.IsAssigned = false;
+            job.ContractorAssigned = null;
             job.IsComplete = true;
-            contractor.IsAssigned = false;
+            //contractor.IsAssigned = false;
         }
 
         public List<Job> GetJobsByCost(List<Job> jobs, int minCost, int maxCost)
