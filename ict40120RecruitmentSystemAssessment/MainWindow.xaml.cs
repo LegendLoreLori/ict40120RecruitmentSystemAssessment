@@ -75,7 +75,12 @@ namespace ict40120RecruitmentSystemAssessment
         //create a new job from input and automatically add it to the recruitmentsystem
         private void AddJobButton_Click(object sender, RoutedEventArgs e)
         {
-            //TODO: handle null exception
+            if (IdJobText.Text == "" || NameJobText.Text == "" || DateJobText.Text == "" || CostJobText.Text == "") return;
+            if (!DateTime.TryParse(DateJobText.Text, out var x))
+            {
+                MessageBox.Show("Please enter a date in the following format: DD/MM/YYYY");
+                return;
+            }
             recruitmentSystem.AddJob(IdJobText.Text, NameJobText.Text, DateJobText.Text, CostJobText.Text);
             RefreshJobs();
             RefreshInProgress();
