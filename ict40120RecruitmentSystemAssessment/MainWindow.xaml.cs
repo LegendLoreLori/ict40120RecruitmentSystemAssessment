@@ -88,7 +88,7 @@ namespace ict40120RecruitmentSystemAssessment
         //Update job's completion status and return contractor to available pool
         private void CompleteJobButton_Click(object sender, RoutedEventArgs e)
         {
-            //TODO: handle null exception
+            if (JobsInProgressList.SelectedItem == null) return;
             recruitmentSystem.CompleteJob((Job)JobsInProgressList.SelectedItem);
             RefreshJobs();
             RefreshInProgress();
