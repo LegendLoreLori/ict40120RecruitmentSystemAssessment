@@ -54,7 +54,7 @@ namespace ict40120RecruitmentSystemAssessment
         //Create a new contractor from input and automatically add it to the recruitmentSystem
         private void AddContractorButton_Click(object sender, RoutedEventArgs e)
         {
-            //TODO: handle exceptions and dont accept non-null inputs
+            //TODO: handle null exceptions
             recruitmentSystem.AddContractor(IdContractorText.Text, FirstNameText.Text, LastNameText.Text, WageText.Text);
             RefreshContractors();
         }
@@ -62,6 +62,7 @@ namespace ict40120RecruitmentSystemAssessment
         //remove entry from contractor list
         private void RemoveContractorButton_Click(object sender, RoutedEventArgs e)
         {
+            //TODO: handle null exception
             recruitmentSystem.RemoveContractor((Contractor)ContractorsList.SelectedItem);
             RefreshContractors();
         }
@@ -76,24 +77,24 @@ namespace ict40120RecruitmentSystemAssessment
             RefreshInProgress();
         }
 
-        //populate list on startup
-        private void JobsList_Initialized(object sender, EventArgs e)
-        {
-            RefreshJobs();
-        }
-
-        //populate list on startup
-        private void JobsInProgressList_Initialized(object sender, EventArgs e)
-        {
-            RefreshInProgress();
-        }
 
         //create a new job from input and automatically add it to the recruitmentsystem
         private void AddJobButton_Click(object sender, RoutedEventArgs e)
         {
+            //TODO: handle null exception
             recruitmentSystem.AddJob(IdJobText.Text, NameJobText.Text, DateJobText.Text, CostJobText.Text);
             RefreshJobs();
             RefreshInProgress();
+        }
+
+        //Update job's completion status and return contractor to available pool
+        private void CompleteJobButton_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO: handle null exception
+            recruitmentSystem.CompleteJob((Job)JobsInProgressList.SelectedItem);
+            RefreshJobs();
+            RefreshInProgress();
+            RefreshContractors();
         }
 
         //list contractors that arent assigned to a job
@@ -108,5 +109,18 @@ namespace ict40120RecruitmentSystemAssessment
         {
             RefreshContractors();
         }
+
+        //populate list on startup
+        private void JobsList_Initialized(object sender, EventArgs e)
+        {
+            RefreshJobs();
+        }
+
+        //populate list on startup
+        private void JobsInProgressList_Initialized(object sender, EventArgs e)
+        {
+            RefreshInProgress();
+        }
+
     }
 }
