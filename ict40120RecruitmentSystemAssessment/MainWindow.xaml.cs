@@ -97,7 +97,7 @@ namespace ict40120RecruitmentSystemAssessment
         }
 
         //populates job box with only jobs whose cost is within a specified range
-        private void FilterJobButton_Click(object sender, RoutedEventArgs e)
+        private void FilterJobsButton_Click(object sender, RoutedEventArgs e)
         {
             JobsList.ItemsSource = null;
             JobsList.ItemsSource = recruitmentSystem.GetJobsWithinRange(int.Parse(MinCostText.Text),int.Parse(MaxCostText.Text));
