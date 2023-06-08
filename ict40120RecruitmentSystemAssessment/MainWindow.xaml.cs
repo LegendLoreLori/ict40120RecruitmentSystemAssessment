@@ -45,16 +45,11 @@ namespace ict40120RecruitmentSystemAssessment
             JobsInProgressList.ItemsSource = recruitmentSystem.GetAssignedJobs();
         }
 
-        //populate list on startup
-        private void ContractorsList_Initialized(object sender, EventArgs e)
-        {
-            RefreshContractors();
-        }
-
         //Create a new contractor from input and automatically add it to the recruitmentSystem
         private void AddContractorButton_Click(object sender, RoutedEventArgs e)
         {
-            //TODO: handle null exceptions
+            if (IdContractorText.Text == "" || FirstNameText.Text == "" || LastNameText.Text == "" || WageText.Text == "") return;
+            if (!int.TryParse(WageText.Text, out var x)) return;
             recruitmentSystem.AddContractor(IdContractorText.Text, FirstNameText.Text, LastNameText.Text, WageText.Text);
             RefreshContractors();
         }
@@ -62,15 +57,14 @@ namespace ict40120RecruitmentSystemAssessment
         //remove entry from contractor list
         private void RemoveContractorButton_Click(object sender, RoutedEventArgs e)
         {
-            //TODO: handle null exception
+            //if (ContractorsList.SelectedItem is not Contractor) return;
             recruitmentSystem.RemoveContractor((Contractor)ContractorsList.SelectedItem);
             RefreshContractors();
         }
 
         private void AssignContractorJobButton_Click(object sender, RoutedEventArgs e)
         {
-            //TODO: handle null exception
-            //TODO: select implement alternative way to select contractors/jobs
+            if (ContractorsList.SelectedItem == null || JobsList.SelectedItem == null) return;
             recruitmentSystem.AssignJob((Contractor)ContractorsList.SelectedItem, (Job)JobsList.SelectedItem);
             RefreshContractors();
             RefreshJobs();
@@ -80,7 +74,12 @@ namespace ict40120RecruitmentSystemAssessment
         //create a new job from input and automatically add it to the recruitmentsystem
         private void AddJobButton_Click(object sender, RoutedEventArgs e)
         {
-            //TODO: handle null exception
+            if (IdJobText.Text == "" || NameJobText.Text == "" || DateJobText.Text == "" || CostJobText.Text == "") return;
+            if (!DateTime.TryParse(DateJobText.Text, out var x))
+            {
+                MessageBox.Show("Please enter a date in the following format: DD/MM/YYYY");
+                return;
+            }
             recruitmentSystem.AddJob(IdJobText.Text, NameJobText.Text, DateJobText.Text, CostJobText.Text);
             RefreshJobs();
             RefreshInProgress();
@@ -101,9 +100,15 @@ namespace ict40120RecruitmentSystemAssessment
         {
             RefreshJobs();
         }
+
         //populates job box with only jobs whose cost is within a specified range
         private void FilterJobsButton_Click(object sender, RoutedEventArgs e)
         {
+            if (!int.TryParse(MinCostText.Text, out var x)) return;
+            if (!int.TryParse(MaxCostText.Text, out var y)) return;
+            if (int.Parse(MinCostText.Text) > int.Parse(MaxCostText.Text)) return;
+            if (int.Parse(MaxCostText.Text) < int.Parse(MinCostText.Text)) return;
+
             JobsList.ItemsSource = null;
             JobsList.ItemsSource = recruitmentSystem.GetJobsWithinRange(int.Parse(MinCostText.Text),int.Parse(MaxCostText.Text));
         }
@@ -117,6 +122,12 @@ namespace ict40120RecruitmentSystemAssessment
 
         //list all contractors
         private void AllContractorsButton_Click(object sender, RoutedEventArgs e)
+        {
+            RefreshContractors();
+        }
+
+        //populate list on startup
+        private void ContractorsList_Initialized(object sender, EventArgs e)
         {
             RefreshContractors();
         }
