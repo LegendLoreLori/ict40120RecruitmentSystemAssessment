@@ -88,8 +88,6 @@ namespace ict40120RecruitmentSystemAssessment
         //construct a job object from input in ui and add it to jobs list
         public void AddJob(string id, string name, string dateInput, string costInput)
         {
-            //TODO: handle date exceptions
-            //TODO: handle null exceptions
             DateOnly date = DateOnly.Parse(dateInput);
             int cost = int.Parse(costInput);
             Job job = new(id, name, date, cost);
@@ -98,15 +96,14 @@ namespace ict40120RecruitmentSystemAssessment
 
         public void AssignJob(Contractor contractor, Job job)
         {
-            //TODO: handle null exceptions
-            //TODO: handle contractors that are already assigned
+            if (job.ContractorAssigned != null) return;
             job.ContractorAssigned = contractor;
             contractor.IsAssigned = true;
         }
 
         public void CompleteJob(Job job/*, Contractor contractor*/)
         {
-            //TODO: handle null exceptions
+            if (job.ContractorAssigned is null) return;
             job.ContractorAssigned.IsAssigned = false;
             job.ContractorAssigned = null;
             job.IsComplete = true;
