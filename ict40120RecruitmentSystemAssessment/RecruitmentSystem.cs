@@ -94,9 +94,10 @@ namespace ict40120RecruitmentSystemAssessment
             Jobs.Add(job);
         }
 
+        //adds a contractor object to a selected job
         public void AssignJob(Contractor contractor, Job job)
         {
-            if (job.ContractorAssigned != null) return;
+            if (job.ContractorAssigned != null || contractor.IsAssigned == true) return;
             job.ContractorAssigned = contractor;
             contractor.IsAssigned = true;
         }
