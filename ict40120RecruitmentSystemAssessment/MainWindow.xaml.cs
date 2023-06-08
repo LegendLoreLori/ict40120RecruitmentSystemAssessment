@@ -128,5 +128,9 @@ namespace ict40120RecruitmentSystemAssessment
             RefreshInProgress();
         }
 
+        private void AllJobsButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

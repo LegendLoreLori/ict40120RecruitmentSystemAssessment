@@ -36,9 +36,9 @@
         <!--Job interactivity-->
         <Button x:Name="AssignContractorJobButton" Content="Assign Contractor" Margin="8" Grid.Column="4" Grid.Row="1" Click="AssignContractorJobButton_Click" />
         <Button x:Name="CompleteJobButton" Content="Complete Job" Margin="8" Grid.Column="5" Grid.Row="1" Click="CompleteJobButton_Click"/>
-        <Button x:Name="AllJobsButton" Content="All Jobs" Margin="8" Grid.Column="4" Grid.Row="2" Click="FilterJobButton_Click" />
+        <Button x:Name="AllJobsButton" Content="All Jobs" Margin="8" Grid.Column="4" Grid.Row="2" Click="AllJobsButton_Click" />
         <Button x:Name="AddJobButton" Content="Add Job" Margin="8" Grid.Column="5" Grid.Row="2" Click="AddJobButton_Click"/>
-        <Button x:Name="FiltersJobButton" Content="Filter Jobs" Margin="8" Grid.Column="4" Grid.Row="3" VerticalAlignment="Bottom" Click="FiltersJobButton_Click" />
+        <Button x:Name="FilterJobsButton" Content="Filter Jobs" Margin="8" Grid.Column="4" Grid.Row="3" VerticalAlignment="Bottom" Click="FilterJobsButton_Click" />
         
         <Label x:Name="MinCostLabel" Content="Min" Grid.Column="4" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="42,0,0,0"/>
         <Label x:Name="MaxCostLabel" Content="Max" Grid.Column="4" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,42,0"/>
