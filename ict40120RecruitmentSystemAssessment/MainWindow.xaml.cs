@@ -57,7 +57,7 @@ namespace ict40120RecruitmentSystemAssessment
         //remove entry from contractor list
         private void RemoveContractorButton_Click(object sender, RoutedEventArgs e)
         {
-            //TODO: handle null exception
+            //if (ContractorsList.SelectedItem is not Contractor) return;
             recruitmentSystem.RemoveContractor((Contractor)ContractorsList.SelectedItem);
             RefreshContractors();
         }
