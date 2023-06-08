@@ -45,12 +45,6 @@ namespace ict40120RecruitmentSystemAssessment
             JobsInProgressList.ItemsSource = recruitmentSystem.GetAssignedJobs();
         }
 
-        //populate list on startup
-        private void ContractorsList_Initialized(object sender, EventArgs e)
-        {
-            RefreshContractors();
-        }
-
         //Create a new contractor from input and automatically add it to the recruitmentSystem
         private void AddContractorButton_Click(object sender, RoutedEventArgs e)
         {
@@ -124,6 +118,12 @@ namespace ict40120RecruitmentSystemAssessment
 
         //list all contractors
         private void AllContractorsButton_Click(object sender, RoutedEventArgs e)
+        {
+            RefreshContractors();
+        }
+
+        //populate list on startup
+        private void ContractorsList_Initialized(object sender, EventArgs e)
         {
             RefreshContractors();
         }
