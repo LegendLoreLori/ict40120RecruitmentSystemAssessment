@@ -88,6 +88,8 @@ namespace ict40120RecruitmentSystemAssessment
         //construct a job object from input in ui and add it to jobs list
         public void AddJob(string id, string name, string dateInput, string costInput)
         {
+            //TODO: handle date exceptions
+            //TODO: handle null exceptions
             DateOnly date = DateOnly.Parse(dateInput);
             int cost = int.Parse(costInput);
             Job job = new(id, name, date, cost);

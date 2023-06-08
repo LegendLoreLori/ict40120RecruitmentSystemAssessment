@@ -96,6 +96,11 @@ namespace ict40120RecruitmentSystemAssessment
             RefreshContractors();
         }
 
+        //populates job box with all jobs
+        private void AllJobsButton_Click(object sender, RoutedEventArgs e)
+        {
+            RefreshJobs();
+        }
         //populates job box with only jobs whose cost is within a specified range
         private void FilterJobsButton_Click(object sender, RoutedEventArgs e)
         {
@@ -126,11 +131,6 @@ namespace ict40120RecruitmentSystemAssessment
         private void JobsInProgressList_Initialized(object sender, EventArgs e)
         {
             RefreshInProgress();
-        }
-
-        private void AllJobsButton_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
