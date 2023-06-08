@@ -101,9 +101,17 @@ namespace ict40120RecruitmentSystemAssessment
         {
             RefreshJobs();
         }
+
         //populates job box with only jobs whose cost is within a specified range
         private void FilterJobsButton_Click(object sender, RoutedEventArgs e)
         {
+            if (!int.TryParse(MinCostText.Text, out var minCost)) return;
+            if (!int.TryParse(MaxCostText.Text, out var maxCost)) return;
+            if (MinCostText.Text == null || MaxCostText.Text == null) return;
+            if (int.Parse(MinCostText.Text) > int.Parse(MaxCostText.Text)) return;
+            if (int.Parse(MaxCostText.Text) < int.Parse(MinCostText.Text)) return;
+
+
             JobsList.ItemsSource = null;
             JobsList.ItemsSource = recruitmentSystem.GetJobsWithinRange(int.Parse(MinCostText.Text),int.Parse(MaxCostText.Text));
         }
