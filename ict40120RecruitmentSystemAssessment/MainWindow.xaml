@@ -37,12 +37,12 @@
         <Button x:Name="AddJobButton" Content="Add Job" Margin="8" Grid.Column="4" Grid.Row="1" Click="AddJobButton_Click"/>
         <Button x:Name="CompleteJobButton" Content="Complete Job" Margin="8" Grid.Column="5" Grid.Row="1" Click="CompleteJobButton_Click"/>
         <Button x:Name="AssignContractorJobButton" Content="Assign" Margin="8" Grid.Column="4" Grid.Row="2" Click="AssignContractorJobButton_Click" />
-        <Button x:Name="FilterJobButton" Content="Filter" Margin="8" Grid.Column="5" Grid.Row="2" />
+        <Button x:Name="FilterJobButton" Content="Filter" Margin="8" Grid.Column="5" Grid.Row="2" Click="FilterJobButton_Click" />
         
-        <Label x:Name="MinLabel" Content="Min" Grid.Column="5" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,10,31"/>
-        <Label x:Name="MaxLabel" Content="Max" Grid.Column="5" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,70,31"/>
-        <TextBox x:Name="MinValueText" Grid.Column="5" Grid.Row="3" HorizontalAlignment="Left" Margin="8,0,4,0" VerticalAlignment="Center" Width="100" />
-        <TextBox x:Name="MaxValueText" Grid.Column="5" Grid.Row="3" Margin="4,0,8,0" HorizontalAlignment="Right" VerticalAlignment="Center" Width="100" />
+        <Label x:Name="MinCostLabel" Content="Min" Grid.Column="5" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,10,31"/>
+        <Label x:Name="MaxCostLabel" Content="Max" Grid.Column="5" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,70,31"/>
+        <TextBox x:Name="MinCostText" Grid.Column="5" Grid.Row="3" HorizontalAlignment="Left" Margin="8,0,4,0" VerticalAlignment="Center" Width="100" />
+        <TextBox x:Name="MaxCostText" Grid.Column="5" Grid.Row="3" Margin="4,0,8,0" HorizontalAlignment="Right" VerticalAlignment="Center" Width="100" />
 
         <!--Lists-->
         <ListBox x:Name="ContractorsList" Grid.Row="4" Grid.ColumnSpan="2" Grid.Column="1" Grid.RowSpan="3" Margin="4,8,4,8" Initialized="ContractorsList_Initialized"/>

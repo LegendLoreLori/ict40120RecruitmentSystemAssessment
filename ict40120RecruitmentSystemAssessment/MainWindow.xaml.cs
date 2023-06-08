@@ -77,7 +77,6 @@ namespace ict40120RecruitmentSystemAssessment
             RefreshInProgress();
         }
 
-
         //create a new job from input and automatically add it to the recruitmentsystem
         private void AddJobButton_Click(object sender, RoutedEventArgs e)
         {
@@ -95,6 +94,13 @@ namespace ict40120RecruitmentSystemAssessment
             RefreshJobs();
             RefreshInProgress();
             RefreshContractors();
+        }
+
+        //populates job box with only jobs whose cost is within a specified range
+        private void FilterJobButton_Click(object sender, RoutedEventArgs e)
+        {
+            JobsList.ItemsSource = null;
+            JobsList.ItemsSource = recruitmentSystem.GetJobsWithinRange(int.Parse(MinCostText.Text),int.Parse(MaxCostText.Text));
         }
 
         //list contractors that arent assigned to a job

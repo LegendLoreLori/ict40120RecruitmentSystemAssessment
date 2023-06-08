@@ -111,8 +111,13 @@ namespace ict40120RecruitmentSystemAssessment
             //contractor.IsAssigned = false;
         }
 
-        public List<Job> GetJobsByCost(List<Job> jobs, int minCost, int maxCost)
+        public List<Job> GetJobsWithinRange(int minCost, int maxCost)
         {
+            List<Job> jobs = new List<Job>();
+            foreach (Job job in Jobs)
+            {
+                if (job.Cost >= minCost && job.Cost <= maxCost) jobs.Add(job);
+            }
             return jobs;
         }
     }   
