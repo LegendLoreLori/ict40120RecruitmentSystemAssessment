@@ -63,7 +63,7 @@
         <Label x:Name="LastNameLabel" Margin="0,0,0,19" Grid.Column="2" Content="Last Name" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Bottom" />
 
         <!--Job add fields-->
-        <TextBox x:Name="IdJobText" Margin="10,19,0,0" Grid.Row="3" Grid.Column="5" HorizontalAlignment="Left" Width="54" VerticalAlignment="Top" />
+        <TextBox x:Name="IdJobText" Margin="8,19,0,0" Grid.Row="3" Grid.Column="5" HorizontalAlignment="Left" Width="54" VerticalAlignment="Top" />
         <TextBox x:Name="DateJobText" Margin="0,19,0,0" Grid.Row="3" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Top" Width="100"  />
         <TextBox x:Name="CostJobText" Margin="0,19,8,0" Grid.Row="3" Grid.Column="5" HorizontalAlignment="Right" VerticalAlignment="Top" Width="54" />
         <TextBox x:Name="NameJobText" Margin="8,0,8,8" Grid.Row="3" Grid.Column="5" VerticalAlignment="Bottom" />
