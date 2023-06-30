@@ -7,9 +7,16 @@ namespace UnitTests
     public class UnitTest
     {
         RecruitmentSystem testRecruitmentSystem;
-        Contractor ?testContractor;
+        List<Job> jobs = new List<Job>
+        {
+            new Job("1", "job1", new DateOnly(2000, 1, 1), 500),
+            new Job("2", "job2", new DateOnly(2000, 1, 1), 7000),
+            new Job("3", "job3", new DateOnly(2000, 1, 1), 12000),
+            new Job("4", "job4", new DateOnly(2000, 1, 1), 13500),
+         };
 
-        [TestInitialize]
+
+    [TestInitialize]
         public void Initialize() 
         {
             testRecruitmentSystem = new RecruitmentSystem();
@@ -20,8 +27,6 @@ namespace UnitTests
         [DataRow("2", "'Mowing'", "1500-01-01", 100000)]
         [DataRow("3", ";21 pilots concert (bad)", "0333-09-01", 0)]
         [DataRow("4", "1", "3000-12-12", -20)]
-
-
         public void JobInitialisesWithValidParameters(string id, string name, string dateString, int cost)
         {
             //arrange
@@ -86,15 +91,6 @@ namespace UnitTests
         [TestMethod]
         public void GetJobsReturnsCorrectJobs()
         {
-            //arange
-            var jobs = new List<Job>
-            {
-                new Job("1", "job1", new DateOnly(2000, 1, 1), 500),
-                new Job("2", "job2", new DateOnly(2000, 1, 1), 500),
-                new Job("3", "job3", new DateOnly(2000, 1, 1), 500),
-                new Job("4", "job4", new DateOnly(2000, 1, 1), 500),
-            };
-
             //act
             jobs[2].ContractorAssigned = new Contractor("1", "Jim", "Bridges", 50);
             testRecruitmentSystem.Jobs = jobs;
@@ -134,5 +130,27 @@ namespace UnitTests
             Assert.IsFalse(job2.IsComplete);
         }
 
+        [TestMethod]
+        [DataRow(1, 1000, new[] { 0 })]
+        [DataRow(501, 15000, new[] { 1, 2, 3 })]
+        [DataRow(1, 13499, new[] { 0, 1, 2 })]
+        [DataRow(-1, -1, new int[0])]
+        [DataRow(1000000, -1, new int[0])]
+        public void GetJobWithinRangeValidatesInputs(int minValue, int maxValue, int[] jobIndexes)
+        {
+            //arange
+            testRecruitmentSystem.Jobs = jobs;
+            List<Job> expectedJobs = new List<Job>();
+
+            //act
+            List<Job> filteredJobs = testRecruitmentSystem.GetJobsWithinRange(minValue, maxValue);
+            foreach (int index in jobIndexes)
+            {
+                expectedJobs.Add(jobs[index]);
+            }
+
+            //assert
+            CollectionAssert.AreEqual(expectedJobs, filteredJobs);
+        }
     }
 }
