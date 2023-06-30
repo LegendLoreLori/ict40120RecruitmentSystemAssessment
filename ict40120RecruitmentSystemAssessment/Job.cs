@@ -18,6 +18,8 @@ namespace ict40120RecruitmentSystemAssessment
 
         public Job(string id, string name, DateOnly completionDate, int cost/*, Contractor? contractorAssigned=null*/) 
         {
+            if (cost < 0) cost = -cost;
+
             Id = id;
             Name = name;
             CompletionDate = completionDate;

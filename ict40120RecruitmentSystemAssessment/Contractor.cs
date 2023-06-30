@@ -16,6 +16,8 @@ namespace ict40120RecruitmentSystemAssessment
 
         public Contractor(string id, string firstName, string lastName, int hourlyWage)
         {
+            if (hourlyWage < 0) hourlyWage = -hourlyWage;
+
             Id = id;
             FirstName = firstName;
             LastName = lastName;
