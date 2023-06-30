@@ -8,8 +8,8 @@ namespace ict40120RecruitmentSystemAssessment
 {
     public class RecruitmentSystem
     {
-        List<Contractor> Contractors;
-        List<Job> Jobs;
+        public List<Contractor> Contractors;
+        public List<Job> Jobs;
 
         public RecruitmentSystem()
         {
@@ -51,7 +51,6 @@ namespace ict40120RecruitmentSystemAssessment
         //passes information in from text boxes and creates a contractor from it
         public void AddContractor(string id, string firstName, string lastName, string hourlyWageInput)
         {
-            //TODO: handle null exceptions
             int hourlyWage = int.Parse(hourlyWageInput);
             Contractor contractor = new(id, firstName, lastName, hourlyWage);
             Contractors.Add(contractor);
@@ -59,7 +58,6 @@ namespace ict40120RecruitmentSystemAssessment
 
         public void RemoveContractor(Contractor contractor)
         {
-            //TODO: handle null exceptions
             Contractors.Remove(contractor);
         }
 
