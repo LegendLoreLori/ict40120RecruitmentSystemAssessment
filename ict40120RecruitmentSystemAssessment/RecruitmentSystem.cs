@@ -51,6 +51,7 @@ namespace ict40120RecruitmentSystemAssessment
         //passes information in from text boxes and creates a contractor from it
         public void AddContractor(string id, string firstName, string lastName, string hourlyWageInput)
         {
+
             int hourlyWage = int.Parse(hourlyWageInput);
             Contractor contractor = new(id, firstName, lastName, hourlyWage);
             Contractors.Add(contractor);

@@ -50,6 +50,12 @@ namespace ict40120RecruitmentSystemAssessment
         {
             if (IdContractorText.Text == "" || FirstNameText.Text == "" || LastNameText.Text == "" || WageText.Text == "") return;
             if (!int.TryParse(WageText.Text, out var x)) return;
+            if (recruitmentSystem.Contractors.Any(contractor => contractor.Id == IdContractorText.Text))
+            {
+                MessageBox.Show("Enter Unique ID");
+                return;
+            }
+
             recruitmentSystem.AddContractor(IdContractorText.Text, FirstNameText.Text, LastNameText.Text, WageText.Text);
             RefreshContractors();
         }
@@ -80,7 +86,12 @@ namespace ict40120RecruitmentSystemAssessment
                 MessageBox.Show("Please enter a date in the following format: DD/MM/YYYY");
                 return;
             }
-            recruitmentSystem.AddJob(IdJobText.Text, NameJobText.Text, DateJobText.Text, CostJobText.Text);
+            if (recruitmentSystem.Jobs.Any(job => job.Id == IdJobText.Text))
+            {
+                MessageBox.Show("Enter Unique ID");
+                return;
+            }
+                recruitmentSystem.AddJob(IdJobText.Text, NameJobText.Text, DateJobText.Text, CostJobText.Text);
             RefreshJobs();
             RefreshInProgress();
         }
@@ -106,8 +117,16 @@ namespace ict40120RecruitmentSystemAssessment
         {
             if (!int.TryParse(MinCostText.Text, out var x)) return;
             if (!int.TryParse(MaxCostText.Text, out var y)) return;
-            if (int.Parse(MinCostText.Text) > int.Parse(MaxCostText.Text)) return;
-            if (int.Parse(MaxCostText.Text) < int.Parse(MinCostText.Text)) return;
+            if (int.Parse(MinCostText.Text) > int.Parse(MaxCostText.Text))
+            {
+                MessageBox.Show("Min cost must be smaller than max cost");
+                return;
+            }
+            if (int.Parse(MinCostText.Text) < 0 || int.Parse(MaxCostText.Text) < 0)
+            {
+                MessageBox.Show("Values entered cannot be negative");
+                return;
+            }
 
             JobsList.ItemsSource = null;
             JobsList.ItemsSource = recruitmentSystem.GetJobsWithinRange(int.Parse(MinCostText.Text),int.Parse(MaxCostText.Text));
